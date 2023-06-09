@@ -1,0 +1,26 @@
+.logoutBtn{
+    background-color: transparent;
+    color: var(--blanco);
+    border-radius: 8px;
+    border: none;
+    font-size: 19px;
+    font-weight: 500;
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    width: 200px;
+    padding: 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.logoutBtn:hover{
+    cursor: pointer;
+    transition: all ease-in-out .5s;
+    background-color: var(--bg-color);
+}

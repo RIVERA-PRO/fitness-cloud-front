@@ -1,0 +1,111 @@
+.foter{
+    height: 100%;
+    width: 100%;
+    padding: 10px 9%;
+    background-color: var(--bg-color);
+}
+
+.fondo-footer{
+    background-image: url(../../../public/img/footer-signup.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20%;
+    object-fit: cover;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-fondo{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    gap: 5rem;
+    padding: 40px 20px;
+    border: none;
+}
+.form-fondo input{
+    background-color: var(--blanco);
+    padding: 10px 20px;
+    border: none;
+}
+
+.form-text{
+    color: var(--blanco);
+}
+
+.form-text p{
+    font-size: 14px;
+}
+.form-text h6{
+    font-size: 20px;
+}
+.btn-2{
+   background-image: linear-gradient(to right,  var(--rojo2) 0%,  var(--rojo) 100%), linear-gradient(to right,  var(--rojo2) 0%,  var(--rojo) 100%);
+color: var(--blanco);
+  border: none;
+  padding: 10px 20px;
+}
+.contact-footer{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    gap: 5rem;
+    border: none;
+    padding: 50px 0px;
+}
+.contact-footer h5{
+    color: var(--rojo);
+}
+.contact-footer p{
+    color: var(--blanco);
+}
+.Copyright{
+    width: 100%;
+  display: flex;
+  justify-content:space-between;
+  padding: 30px 0px;
+}
+.Copyright p{
+    color: var(--blanco);
+}
+
+.Copyright a{
+    color: var(--blanco);
+    text-decoration: none;
+    margin: 5px;
+}
+
+.dev{
+  
+    display: flex;
+   align-items: center;
+   gap: 1rem;
+   justify-content: center;
+   padding: 20px 0px;
+}
+.dev p{
+    color: var(--blanco);
+}
+.dev img {
+    width: 60px;
+}
+@media (max-width: 760px) {
+    .fondo-footer{
+        background-image: url(../../../public/img/hero-bg2.jpg);
+        height: 70%;
+
+    }
+    .foter{
+        padding: 10px 2%;
+    }
+    .Copyright{
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-footer{
+        flex-direction: column;
+       
+    }
+}

@@ -1,0 +1,32 @@
+*{
+  padding: 0 ;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --text-color: #000;
+  --bg-color: #111111;
+  --bgv-color: #808a9434;
+  --darkIcon-color: #000;
+  --transparent:#0000000e;
+  --gris:#ffffff25;
+  --rojo:#AC1929;
+  --rojo2:#FF1616;
+  --rojo3:#b30cd8;
+  --rojo4:#D71920;
+  --blanco: #fff;
+  --bg-li:  aliceblue;
+}
+
+
+.main-content {
+  width: 100%;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2,h3,h4,h5{
+  color: var(--text-color);
+}

@@ -1,0 +1,10 @@
+.HeroTriceps{
+    background-image: url(../../../public/img/triceps3.jpeg);
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

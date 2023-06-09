@@ -1,0 +1,10 @@
+.HeroCuadriceps{
+    background-image: url(../../../public/img/cuadriceps.jpg);
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

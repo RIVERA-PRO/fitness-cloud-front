@@ -1,0 +1,132 @@
+.comentariosContain{
+    width: 100%;
+    padding: 100px 10%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: var( --bg-li);
+}
+
+.photo-name-create{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    
+}
+.photo-name-create img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+.comentario{
+    margin-top: 10px;
+    background-color: var(--blanco);
+    padding: 10px;
+    border-radius: 7px;
+   
+}
+.photo-name-create p{
+    font-size: 15px;
+}
+.photo-name-create h6{
+    font-weight: 500;
+}
+
+.comment-text{
+    background-color: var( --bg-li);
+    padding: 20px 20px;
+    border-radius: 0px 10px 10px 10px;
+    margin-left: 50px;
+    
+}
+.comment-info{
+    display: flex;
+    gap: 10px;
+}
+
+.edit-delete-btns button{
+    background-color: transparent;
+    border: none;
+
+}
+
+.delete-btn{
+    padding: 10px;
+    cursor: pointer;
+    color: brown;
+}
+.edit-btn{
+    padding: 10px;
+    cursor: pointer;
+    color: blue;
+}
+
+.form-edit-comment button{
+    background-color: transparent;
+    border: none;
+    width: 30px;
+   cursor: pointer;
+
+}
+
+.input-edit-comment{
+    border: none;
+    border-radius: 10px;
+    padding: 4px 20px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.crear-comentario-form{
+    background:linear-gradient(30deg, var(--rojo4), var(--rojo4));
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    padding: 10px 10%;
+    border-radius: 7px;
+    margin-top: 10px;
+}
+.crear-comentario-form img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+.crear-comentario-form input{
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    padding: 6px;
+}
+.crear-btn{
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: var(--blanco);
+    cursor: pointer;
+}
+
+.comentarios-title-cantidad{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.mas-comentarios{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+}
