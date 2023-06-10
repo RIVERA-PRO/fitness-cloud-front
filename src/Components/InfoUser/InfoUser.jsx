@@ -26,22 +26,7 @@ function ProfilePage({ handleLogout }) {
 
   return (
     <div className='userInfoContainer'>
-      {userData ? (
-        <div className='userInfo'>
-          <h3>Tu perfil</h3>
-          <div className='info'>
-            <img src={userData.photo} alt="User Avatar" />
-            <div>
-              <h3>{userData.name}</h3>
-              <p>{userData.mail}</p>
-            </div>
-            <Anchor to={`/perfil/${userData.user_id}/${userData.name}`} > ver</Anchor>
-          </div>
-          <Logout onClick={handleLogout} />
-        </div>
-      ) : (
-        <p className='loginText'>Inicia sesión para ver tu perfil</p>
-      )}
+
     </div>
   );
 }

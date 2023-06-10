@@ -1,0 +1,8 @@
+.RutinasContain{
+    width: 100%;
+    padding: 10px 10%;
+    justify-content: center;
+    align-items: center;
+    place-content: center;
+    align-content: center;
+}

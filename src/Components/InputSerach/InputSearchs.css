@@ -2,6 +2,7 @@
     position: relative;
     min-height: 50px;
     width: 100%;
+
   }
   
   .modal {
@@ -17,6 +18,7 @@
     overflow-y:scroll;
     border-radius: 7px ;
     transition: all .40s ease;
+
 }
  
   .modal h2 {
@@ -144,17 +146,20 @@ html::-webkit-scrollbar-thumb{
   .inputJobs{
       width: 100%!important;
       margin-top: 6px;
+   
     }
    
 }
 
  @media (max-width: 400px){
     .modal {
-        left: -54%;
-        width: 180%;
+        width: 100%;
         padding: 10px;
         max-height: 40vh;
-        background-color: var(--bg-color);
+     
+    }
+    .search-container{
+      padding: 10px;
     }
  }
 

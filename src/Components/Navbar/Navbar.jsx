@@ -6,7 +6,7 @@ import InputSearch from '../InputSerach/InputSearchs'
 import { FaHome } from 'react-icons/fa';
 import LogIn from '../../Components/LogIn/LogIn'
 import Register from '../../Components/Register/Register'
-import { faUser, faHome, faShoppingCart, faSignOutAlt, faNewspaper, faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faHome, faDumbbell, faSignOutAlt, faNewspaper, faCalendarCheck, faHeart, faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
 import UserInfo from '../InfoUser/InfoUser';
 import Logout from '../../Components/Logout/Logout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,24 +15,24 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false);
     let [modalUser, setModalUser] = useState(false);
+    let [modalNav, setModalNav] = useState(false);
     let [modalUserOption, setModalUserOption] = useState('login');
     const handleModalUser = () => {
         setModalUser(!modalUser);
-    }; //Funcion renderiza Modal 'user'
+    };
+    const handleModalNav = () => {
+        setModalNav(!modalNav);
+    };
     const handleModalUserOption = () => {
         setModalUserOption(modalUserOption === 'register' ? 'login' : 'register');
     };
 
 
-    const handleScroll = () => {
-        const offset = window.scrollY;
-        if (offset > 0) {
-            setScrolled(true);
-        } else {
-            setScrolled(false);
-        }
-    };
+    const [menuVisible, setMenuVisible] = useState(false);
 
+    const toggleMenu = () => {
+        setMenuVisible(!menuVisible);
+    };
 
     const [userData, setUserData] = useState(null);
 
@@ -55,71 +55,109 @@ export default function Navbar() {
 
                 </div>
 
-                <div className={`nav_items ${isOpen && "open"}`} >
 
-                    <div className="cerrar-nav" onClick={() => setIsOpen(!isOpen)}>
-                        x
-                    </div>
-                    <div className='logo-nav'>
-                        <img src="../../../img/logo.png" alt="logo" />
-                    </div>
-                    <div className='enlaces'>
-                        <Anchor to={`/`} >Inico</Anchor>
-                        <Anchor to={`/abdominales`} >Abdominales</Anchor>
-                        <Anchor to={`/biceps`} >Biceps</Anchor>
-                        <Anchor to={`/gluteos`} >Gluteos</Anchor>
-                        <Anchor to={`/pecho`} >Pecho</Anchor>
-                        <Anchor to={`/triceps`} >Triceps</Anchor>
-                    </div>
-
-
-                </div>
 
                 <div className='enlaces2'>
-                    <Anchor to={`/`} > <FaHome className='icon' /> <span className='a'>Inicio</span></Anchor>
-                    <Anchor to={`/ejercicios`} > <FaHome className='icon' /> <span className='a'>Ejercicios</span></Anchor>
-                    {/* <Anchor to={`/abdominales`} >  <FaHome className='icon' /> <span className='a'>Abdominales</span></Anchor>
-                    <Anchor to={`/biceps`} >  <FaHome className='icon' /> <span className='a'>Biceps</span></Anchor>
-                    <Anchor to={`/gluteos`} >  <FaHome className='icon' /> <span className='a'>Gluteos</span></Anchor>
-                    <Anchor to={`/pecho`} >  <FaHome className='icon' /> <span className='a'>Pecho</span></Anchor>
-                    <Anchor to={`/triceps`} >  <FaHome className='icon' /> <span className='a'>Triceps</span></Anchor>
-                    <Anchor to={`/Cardio`} >  <FaHome className='icon' /> <span className='a'>Cardio</span></Anchor>
-                    <Anchor to={`/pesoCorporal`} >  <FaHome className='icon' /> <span className='a'>Peso Corporal</span></Anchor>
-                    <Anchor to={`/hombro`} >  <FaHome className='icon' /> <span className='a'>Hombro</span></Anchor>
-                    <Anchor to={`/yoga`} >  <FaHome className='icon' /> <span className='a'>Yoga</span></Anchor>
-                    <Anchor to={`/cuadriceps`} >  <FaHome className='icon' /> <span className='a'>Cuadriceps</span></Anchor> */}
                     {userData ? (
-                        <div className='userInfo-nav' onClick={handleModalUser} >
+                        <div className='userInfo-nav' onClick={handleModalUser}>
                             <div className='img-name'>
                                 <img src={userData.photo} alt="User Avatar" />
                                 <p>{userData.name} </p>
                             </div>
-                            <p><Logout icon={faSignOutAlt} /></p>
+
                         </div>
                     ) : (
-                        <div className='enlaces2' >
+                        <div className='userInfo-nav2' >
                             <Anchor to={`/register`} > <FontAwesomeIcon icon={faUser} className='icon' /> <span className='a'> Ingresar</span></Anchor>
                         </div>
                     )}
+                    <Anchor to={`/`} > <FaHome className='icon' /> <span className='a'>Inicio</span></Anchor>
+                    <Anchor to={`/ejercicios`} > <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Ejercicios</span></Anchor>
+                    <Anchor to={`/favoritos`} id='icon-none'>  <FontAwesomeIcon icon={faHeart} className='icon' /> <span className='a'>Favoritos</span></Anchor>
+
+
+                    <a onClick={toggleMenu} id='icon-none'>
+                        <FontAwesomeIcon icon={faNewspaper} className='icon' />
+                        <span className='a'>Categorias</span>
+                    </a>
+                    <a onClick={handleModalUser} className='icon-flex-none'><FontAwesomeIcon icon={faSearch} className="icon" /></a>
+                    <a onClick={handleModalNav} className='icon-flex-none'> <FontAwesomeIcon icon={faBars} className="icon" /></a>
+
+                    {menuVisible && (
+                        <p className='menu-items' >
+                            <p onClick={toggleMenu} className="cerrar"><span>X </span>Ocultar  </p>
+                            <Anchor to={`/abdominales`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Abdominales</span></Anchor>
+                            <Anchor to={`/biceps`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />  <span className='a'>Biceps</span></Anchor>
+                            <Anchor to={`/gluteos`} >  <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Gluteos</span></Anchor>
+                            <Anchor to={`/pecho`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />  <span className='a'>Pecho</span></Anchor>
+                            <Anchor to={`/triceps`} >  <FontAwesomeIcon icon={faDumbbell} className='icon' />  <span className='a'>Triceps</span></Anchor>
+                            <Anchor to={`/Cardio`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Cardio</span></Anchor>
+                            <Anchor to={`/pesoCorporal`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Peso Corporal</span></Anchor>
+                            <Anchor to={`/hombro`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />  <span className='a'>Hombro</span></Anchor>
+                            <Anchor to={`/yoga`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Yoga</span></Anchor>
+                            <Anchor to={`/cuadriceps`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Cuadriceps</span></Anchor>
+                        </p>
+                    )}
+
+                    {userData ? (
+                        <div className='userInfo-nav' onClick={handleModalUser}>
+
+                            <p className='logout'><Logout icon={faSignOutAlt} /></p>
+                        </div>
+                    ) : (
+                        <div className='enlaces2' >
+
+                        </div>
+                    )}
                 </div>
+
 
                 {modalUser && (
                     <div className="modal_content">
                         <div className="modal-nav">
                             <div className="cerrar-modal" onClick={handleModalUser}>x</div>
-                            <p>adasd</p>
-                            <UserInfo />
-
-
+                            <InputSearch />
                         </div>
                     </div>
                 )}
 
-                <div className={`nav_toggle  ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                {modalNav && (
+                    <div className="modal_content">
+                        <div className="modal-nav">
+                            <div className="cerrar-modal" onClick={handleModalNav}>x</div>
+                            <div className='enlaces'>
+
+                                <Anchor to={`/favoritos`} >  <FontAwesomeIcon icon={faHeart} className='icon' /> <span className='a'>Favoritos</span></Anchor>
+                                <Anchor to={`/rutinas`} >  <FontAwesomeIcon icon={faHeart} className='icon' /> <span className='a'>Rutina</span></Anchor>
+
+                                <Anchor to={`/abdominales`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Abdominales</span></Anchor>
+                                <Anchor to={`/biceps`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />  <span className='a'>Biceps</span></Anchor>
+                                <Anchor to={`/gluteos`} >  <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Gluteos</span></Anchor>
+                                <Anchor to={`/pecho`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />  <span className='a'>Pecho</span></Anchor>
+                                <Anchor to={`/triceps`} >  <FontAwesomeIcon icon={faDumbbell} className='icon' />  <span className='a'>Triceps</span></Anchor>
+                                <Anchor to={`/Cardio`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Cardio</span></Anchor>
+                                <Anchor to={`/pesoCorporal`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Peso Corporal</span></Anchor>
+                                <Anchor to={`/hombro`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />  <span className='a'>Hombro</span></Anchor>
+                                <Anchor to={`/yoga`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Yoga</span></Anchor>
+                                <Anchor to={`/cuadriceps`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Cuadriceps</span></Anchor>
+
+                                {userData ? (
+                                    <div className='userInfo-nav' onClick={handleModalUser}>
+
+                                        <p ><Logout icon={faSignOutAlt} /></p>
+                                    </div>
+                                ) : (
+                                    <div className='enlaces2' >
+                                        <Anchor to={`/register`} > <FontAwesomeIcon icon={faUser} className='icon' /> <span className='a'> Ingresar</span></Anchor>
+                                    </div>
+                                )}
+
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+
 
 
 
@@ -128,6 +166,6 @@ export default function Navbar() {
             </nav>
 
 
-        </header>
+        </header >
     );
 }

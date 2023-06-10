@@ -112,3 +112,21 @@
 
   }
 
+
+  .favorito-button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    font-size: 20px;
+   
+  }
+  
+  .favorito-button .fa-heart {
+    color: rgba(0, 0, 0, 0.788);
+  }
+  
+  .favorito-button.favorito-active .fa-heart {
+    color: red;
+  }
+  

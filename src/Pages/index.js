@@ -14,6 +14,8 @@ import YogaPage from "./YogaPage/YogaPage";
 import CuadricepsPage from "./CuadricepsPage/CuadricepsPage";
 import PageEjercicios from "./PageEjercicios/PageEjercicios";
 import PageLogin from "./PageLogin/PageLogin";
+import PageFavoritos from "./PageFavoritos/PageFavoritos";
+import PageRutinas from "./PageRutinas/PageRutinas";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -53,7 +55,7 @@ export const router = createBrowserRouter([
                 element: <CardioPage />,
             },
             {
-                path: "/pesoCorporal",
+                path: "/peso-corporal",
                 element: <PesoCorporalPage />,
             },
             {
@@ -77,7 +79,14 @@ export const router = createBrowserRouter([
                 path: "/register",
                 element: <PageLogin />,
             },
-
+            {
+                path: "/favoritos",
+                element: <PageFavoritos />,
+            },
+            {
+                path: "/rutinas",
+                element: <PageRutinas />,
+            },
         ],
     },
 ]);
