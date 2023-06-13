@@ -15,7 +15,8 @@ export default function CardsX() {
         axios.get('https://fitness-ue8o.onrender.com/ejercicios')
             .then(response => {
                 setTimeout(() => {
-                    setEjercicios(response.data.ejercicios); // Actualizar el estado con los datos obtenidos
+                    const limit = response.data.ejercicios.slice(0, 2)
+                    setEjercicios(limit); // Actualizar el estado con los datos obtenidos
                     setShowSpiral(false); // Ocultar el componente Spiral después de 2 segundos
                 }, 2000);
             })

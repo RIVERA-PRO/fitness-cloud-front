@@ -24,21 +24,31 @@ export default function Favoritos() {
     };
 
     return (
-        <div className='favoritos-contain'>
+        <div className='favorito-component'>
             <h1>Favoritos</h1>
             {favoritos.length > 0 ? (
                 <div>
                     <button onClick={removeAllFavoritos}>Remover Todos los Favoritos</button>
-                    {favoritos.map((ejercicio) => (
-                        <div key={ejercicio._id}>
-                            <h2>{ejercicio.title}</h2>
-                            <p>{ejercicio.description}</p>
-                            <Link to={`/ejercicios/${ejercicio._id}`}>
-                                Ver más <FontAwesomeIcon icon={faSignOutAlt} />
-                            </Link>
-                            <button onClick={() => removeEjercicioSeleccionado(ejercicio._id)}>Remover  <FontAwesomeIcon icon={faHeart} className="heart-icon" /></button>
-                        </div>
-                    ))}
+                    <div className='favoritos-contain'>
+                        {favoritos.map((ejercicio) => (
+
+                            <div key={ejercicio._id} className='card-lateral'>
+                                <img src={ejercicio.img} alt="" />
+                                <div className='card-lateral-text'>
+                                    <button className="delete-button" onClick={() => removeEjercicioSeleccionado(ejercicio._id)}>  X</button>
+                                    <h4>{ejercicio.title.slice(0, 20)}..</h4>
+
+                                    <p>{ejercicio.description.slice(0, 40)}...</p>
+                                    <Link to={`/ejercicios/${ejercicio._id}`}>
+                                        <FontAwesomeIcon icon={faSignOutAlt} />  Ver más
+                                    </Link>
+
+
+                                </div>
+                            </div>
+
+                        ))}
+                    </div>
                 </div>
             ) : (
                 <p>No tienes ejercicios guardados como favoritos.</p>

@@ -23,10 +23,30 @@ export default function Navbar() {
     const handleModalNav = () => {
         setModalNav(!modalNav);
     };
-    const handleModalUserOption = () => {
-        setModalUserOption(modalUserOption === 'register' ? 'login' : 'register');
+    const [showButton, setShowButton] = useState(false);
+
+
+    const handleScroll = () => {
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        const totalHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const scrollPercentage = (scrollTop / (totalHeight - windowHeight)) * 100;
+
+        if (window.pageYOffset > 100) {
+            setShowButton(true);
+        } else {
+            setShowButton(false);
+        }
     };
 
+
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     const [menuVisible, setMenuVisible] = useState(false);
 
@@ -48,6 +68,13 @@ export default function Navbar() {
 
     return (
         <header>
+
+
+            {showButton && (
+                <div className='InputSearch'>
+                    <InputSearch />
+                </div>
+            )}
             <nav className={scrolled ? "navbar scrolled" : "navbar"}>
 
                 <div className='logo'>
@@ -74,6 +101,7 @@ export default function Navbar() {
                     <Anchor to={`/`} > <FaHome className='icon' /> <span className='a'>Inicio</span></Anchor>
                     <Anchor to={`/ejercicios`} > <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Ejercicios</span></Anchor>
                     <Anchor to={`/favoritos`} id='icon-none'>  <FontAwesomeIcon icon={faHeart} className='icon' /> <span className='a'>Favoritos</span></Anchor>
+                    <Anchor to={`/rutinas`} id='icon-none'>  <FontAwesomeIcon icon={faCalendarCheck} className='icon' /> <span className='a'>Rutinas</span></Anchor>
 
 
                     <a onClick={toggleMenu} id='icon-none'>
@@ -93,7 +121,7 @@ export default function Navbar() {
                             <Anchor to={`/triceps`} >  <FontAwesomeIcon icon={faDumbbell} className='icon' />  <span className='a'>Triceps</span></Anchor>
                             <Anchor to={`/Cardio`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Cardio</span></Anchor>
                             <Anchor to={`/pesoCorporal`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Peso Corporal</span></Anchor>
-                            <Anchor to={`/hombro`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />  <span className='a'>Hombro</span></Anchor>
+                            <Anchor to={`/hombros`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />  <span className='a'>Hombro</span></Anchor>
                             <Anchor to={`/yoga`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Yoga</span></Anchor>
                             <Anchor to={`/cuadriceps`} >   <FontAwesomeIcon icon={faDumbbell} className='icon' />   <span className='a'>Cuadriceps</span></Anchor>
                         </p>

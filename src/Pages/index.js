@@ -16,6 +16,7 @@ import PageEjercicios from "./PageEjercicios/PageEjercicios";
 import PageLogin from "./PageLogin/PageLogin";
 import PageFavoritos from "./PageFavoritos/PageFavoritos";
 import PageRutinas from "./PageRutinas/PageRutinas";
+import EspaldaPage from "./EspaldaPage/EspaldaPage";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -59,7 +60,7 @@ export const router = createBrowserRouter([
                 element: <PesoCorporalPage />,
             },
             {
-                path: "/hombro",
+                path: "/hombros",
                 element: <HombroPage />,
             },
             {
@@ -86,6 +87,10 @@ export const router = createBrowserRouter([
             {
                 path: "/rutinas",
                 element: <PageRutinas />,
+            },
+            {
+                path: "/espalda",
+                element: <EspaldaPage />,
             },
         ],
     },

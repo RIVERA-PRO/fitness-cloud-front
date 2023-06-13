@@ -232,8 +232,8 @@ export default function Comentarios() {
                                                             onChange={handleEditComentarioTextChange}
                                                         />
 
-                                                        <button type="submit"><FontAwesomeIcon icon={faPaperPlane} /></button>
-                                                        <button onClick={cancelarEdicionComentario}><FontAwesomeIcon icon={faTimes} /></button>
+                                                        <button className='create' type="submit"><FontAwesomeIcon icon={faPaperPlane} /></button>
+                                                        <button className='cancel' onClick={cancelarEdicionComentario}><FontAwesomeIcon icon={faTimes} /></button>
 
                                                     </form>
                                                 </div>
@@ -257,7 +257,7 @@ export default function Comentarios() {
                 ))}
                 {!showAllComments && comments.length > 4 && (
                     <button className="mas-comentarios" onClick={() => setShowAllComments(true)}>
-                        Cargar más.. <FontAwesomeIcon icon={faArrowDown} />
+                        Cargar más...
                     </button>
                 )}
             </div>
@@ -273,8 +273,8 @@ export default function Comentarios() {
                     <button className='crear-btn' onClick={createComment}><FontAwesomeIcon icon={faPaperPlane} /></button>
                 </div>
             ) : (
-                <div className='enlaces2' >
-                    <Anchor to={`/register`} >  <span className='a'> Ingresar para comentar</span></Anchor>
+                <div className='crear-comentario-form'>
+                    <Anchor to={`/register`} >  <span className='a'> Inicia sesion comentar</span></Anchor>
                 </div>
             )}
 

@@ -42,8 +42,14 @@ export default function Hero() {
             {!showSpiral && (
                 <>
                     <div className='title-img'>
-                        <img src={img} alt="" />
-                        <h2>Categorias</h2>
+                        <div className='img-title'>
+                            <img src={img} alt="" />
+                            <h2>Categorias</h2>
+                        </div>
+                        <Link to={`/ejercicios`}>
+                            Ver más
+
+                        </Link>
                     </div>
                     <Swiper effect={'coverflow'} grabCursor={true} loop={true} slidesPerView={'auto'} coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2.5, }} pagination={{ el: '.swiper-pagination', clickable: true }} navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', clickable: true, }} onSwiper={(swiper) => console.log(swiper)} className="swiper_container">
                         <Swiper>
@@ -59,11 +65,17 @@ export default function Hero() {
                             ))}
                         </Swiper>
                     </Swiper>
-                    <div className='title-img'>
-                        <img src={img} alt="" />
-                        <h2>Ejercicios</h2>
+                    {/* <div className='title-img'>
+                        <div className='img-title'>
+                            <img src={img} alt="" />
+                            <h2>Ejercicos</h2>
+                        </div>
+                        <Link to={`/ejercicios`}>
+                            Ver más
+
+                        </Link>
                     </div>
-                    <CardsX />
+                    <CardsX /> */}
                 </>
             )}
         </div>

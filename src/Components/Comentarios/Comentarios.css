@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    background-color: var( --bg-li);
+    background-color: var( --bg-color);
 }
 
 .photo-name-create{
@@ -23,16 +23,18 @@
 }
 .comentario{
     margin-top: 10px;
-    background-color: var(--blanco);
+    background-color: var( );
     padding: 10px;
     border-radius: 7px;
    
 }
 .photo-name-create p{
     font-size: 15px;
+    color: var(--blanco);
 }
 .photo-name-create h6{
     font-weight: 500;
+    color: var(--blanco);
 }
 
 .comment-text{
@@ -56,12 +58,16 @@
 .delete-btn{
     padding: 10px;
     cursor: pointer;
-    color: brown;
+    color: var(--rojo4);
 }
 .edit-btn{
     padding: 10px;
     cursor: pointer;
     color: blue;
+}
+.crear-comentario-form a{
+    color: var(--blanco);
+    text-decoration: none;
 }
 
 .form-edit-comment button{
@@ -72,6 +78,18 @@
 
 }
 
+.cancel{
+    padding: 10px;
+    cursor: pointer;
+    color: var(--blanco);
+    font-size: 18px;
+}
+.create{
+    padding: 10px;
+    cursor: pointer;
+    color: var(--blanco);
+    font-size: 18px;
+}
 .input-edit-comment{
     border: none;
     border-radius: 10px;
@@ -117,6 +135,11 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    color: var(--blanco);
+}
+.comentarios-title-cantidad h3{
+  
+    color: var(--blanco);
 }
 
 .mas-comentarios{
@@ -129,4 +152,35 @@
     border: none;
     cursor: pointer;
     padding: 20px;
+    color: var(--blanco);
+    text-align: center;
+    margin-left: 45%;
+}
+
+
+
+@media (max-width: 568px) {
+    .mas-comentarios{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 20px;
+        color: var(--blanco);
+        text-align: center;
+        margin-left: 30%;
+    }
+
+    .photo-name-create{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px;
+        flex-direction: column;
+    }
 }

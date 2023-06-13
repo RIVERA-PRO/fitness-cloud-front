@@ -14,15 +14,33 @@
   display: flex;
   text-align: left;
   gap: 1rem;
-  padding: 0px 12%;
+  padding: 0px 13%;
   width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.title-img a{
+  color: var(--blanco);
+  font-size: 14px;
+  text-decoration: none;
+}
+.img-title{
+  display: flex;
+  text-align: left;
+  gap: 10px;
   align-items: center;
 }
+
+
 .title-img img{
-  width: 30px;
+  width: 24px;
+  object-fit: cover;
 }
 .title-img h2{
   color: var(--blanco);
+  font-size: 17px;
 }
 .swiper_container a{
   text-decoration: none;
@@ -49,14 +67,18 @@
     transition: all 0.25s;
   }
   .swiper_container img{
-     width: 20rem;
+     width: 17rem;
      height: 50vh;
      object-fit: cover;
      border-radius: 20px;
      transition: all 0.25s;
+     -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+     -ms-border-radius: 20px;
+     -o-border-radius: 20px;
 }
   .swiper-slide {
-    width: 23rem !important;
+    width: 19rem !important;
     display: flex!important;
     align-items: center!important;
     justify-content: center!important;
@@ -95,71 +117,9 @@
         object-fit: cover;
         border-radius: 20px;
    }
-
+.categoria-card{
+  font-size: 13px;
+}
     
   }
  
- 
-  .mancuerna, .titulo-detail, .img-descripcion, .pasos, .consejos{
-    opacity: 0;
-    animation: slideFromLeft 1s ease-in-out forwards;
-    -webkit-animation: slideFromLeft 1s ease-in-out forwards;
-}
-  .text-hero1{
-    opacity: 0;
-    animation: slideFromLeft 1s ease-in-out forwards;
-    -webkit-animation: slideFromLeft 1s ease-in-out forwards;
-}
-
-  .swiper_container, .card, #swiper_container {
-    opacity: 0;
-    animation: slideFromLeft 1s ease-in-out forwards;
-    -webkit-animation: slideFromLeft 1s ease-in-out forwards;
-}
-.titulo{
-  opacity: 0;
-  animation: slideFromCenter 1s ease-in-out forwards;
-  -webkit-animation: slideFromCenter 1s ease-in-out forwards;
-}
-
-
-@keyframes slideFromLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-20%);
-        -webkit-transform: translateX(-20%);
-        -moz-transform: translateX(-20%);
-        -ms-transform: translateX(-20%);
-        -o-transform: translateX(-20%);
-}
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideFromRight {
-    from {
-        opacity: 0;
-       
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideFromCenter {
-  from {
-      opacity: 0;
-     
-  }
-  to {
-      opacity: 10;
-      transform: translateY(-20%);
-      -webkit-transform: translateY(-20%);
-      -moz-transform: translateY(-20%);
-      -ms-transform: translateY(-20%);
-      -o-transform: translateY(-20%);
-}
-}

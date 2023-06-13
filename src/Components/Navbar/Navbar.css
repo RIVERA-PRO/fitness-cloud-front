@@ -296,3 +296,17 @@ nav:hover{
     margin-left: 90%;
     color: var(--blanco);
  }
+
+ .InputSearch{
+    background-color:var(--bg-color);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    width: 100%;
+    transition: 0.10s ease all;
+    -webkit-transition: 0.10s ease all;
+    -moz-transition: 0.10s ease all;
+    -ms-transition: 0.10s ease all;
+    -o-transition: 0.10s ease all;
+}

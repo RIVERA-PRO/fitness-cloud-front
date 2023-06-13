@@ -1,0 +1,171 @@
+
+.scroll-contain{
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 0px 10%;
+  }
+
+  .card-scroll{
+    overflow: hidden;
+    background-color: var(--blanco);
+    margin: 10px;
+    border-radius: 10px;
+}
+.card-scroll a{
+    background-color: var(--rojo2);
+    font-size: 13px;
+    padding: 4px;
+    border-radius: 7px;
+    width: 80px;
+    text-align: center;
+}
+.card-scroll p{
+    font-size: 13px;
+}
+.card-scroll h4{
+    font-size: 15px;
+}
+.card-scroll-text{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.dis-flex{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.dis-flex h6{
+    font-weight: 400;
+}
+.scroll-buttons{
+    display: flex;
+    justify-content: center;
+}
+.next-prev-btn{
+    background-color: transparent;
+    border: none;
+    color: var(--blanco);
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #ffffff2b;
+    padding: 6px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.contain-s{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 20px 0px;
+}
+
+.dis-flex2{
+    display: flex;
+    padding: 0px 13%;
+     width: 100%;
+     justify-content: space-between;
+    
+}
+
+.dis-flex2 p{
+    color: var(--blanco);
+}
+
+.dis-flex2 a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 14px;
+}
+#swiper_container_scroll {
+    height: 50vh;
+    width: 100%;
+    transition: all 0.25s;
+   
+  }
+  #swiper_container_scroll img{
+     width: 100%;
+     height: 11rem;
+     object-fit: cover;
+    
+     transition: all 0.25s;
+}
+#SwiperSlide-scroll{
+    width: 16rem !important;
+   
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    align-content: center!important;
+    transition: all 0.25s;
+  }
+  #swiper_container_scroll a{
+   text-decoration: none;
+   color: var(--blanco);
+  }
+
+  @media (max-width: 900px) {
+    
+ #swiper_container_scroll {
+    height: 44vh;
+    width: 100%;
+ 
+  }
+  #SwiperSlide-scroll{
+    width: 13rem !important;
+   
+  }
+
+  #swiper_container_scroll img{
+  
+    height: 8rem;
+}
+.next-prev-btn{
+    display: none;
+}
+.scroll-contain{
+   
+    padding: 0px 0%;
+  }
+
+  .card-scroll p{
+    font-size: 12px;
+}
+.card-scroll h4{
+    font-size: 14px;
+}
+.card-scroll a{
+    font-size: 12px;
+    width: 70px;
+}
+.card-scroll h6{
+   display: none;
+}
+
+.dis-flex2{
+  
+    padding: 0px 5%;
+}
+.dis-flex2 p{
+    color: var(--blanco);
+    font-size: 14px;
+}
+
+.dis-flex2 a{
+    font-size: 13px;
+}
+  }
+

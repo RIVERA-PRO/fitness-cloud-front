@@ -1,17 +1,11 @@
-.HeroCardio{
-    background-image: url(../../../public/img/cardio.jpg);
+.HeroEspalda{
+    background-image: url(../../../public/img/espalda.jpg);
     height: 80vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    transition: all 0.25s;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.titulo{
-    font-size: 50px;
-    color: var(--blanco);
-   text-align: center;
-   
+    transition: all .40s ease!important;;
 }

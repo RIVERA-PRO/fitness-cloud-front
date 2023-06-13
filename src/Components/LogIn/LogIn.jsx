@@ -181,7 +181,7 @@ export default function SignIn() {
         <GoogleLogin
           className="google"
           image="./google.png"
-          text="Sign in with Google"
+          text="Inicia con Google"
           clientId={clientID}
           onSuccess={onSuccess}
           onFailure={onFailure}
