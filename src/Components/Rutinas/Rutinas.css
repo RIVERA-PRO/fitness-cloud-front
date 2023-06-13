@@ -1,0 +1,105 @@
+.container{
+    display: flex;
+    gap: 20px;
+    padding: 20px 10%;
+    height: 90vh;
+}
+
+.ejercicio-seleccionado{
+    background:linear-gradient(30deg, var(--rojo), var(--rojo4));
+    border-radius: 10px;
+    overflow: hidden;
+    width: 40rem;
+    height: 85vh;
+}
+
+.selected img{
+   width: 100%;
+   height: 300px;
+   object-fit:contain;
+   border-radius: 20px;
+  
+}
+
+.selected li img{
+    width: 20px;
+    height: 20px;
+}
+.selected li {
+  background-color: var(--bgv-color);
+  display: flex;
+    font-size: 13px;
+}
+.selected{
+    padding: 10px;
+}
+
+.ejercicios-lista{
+    overflow-y: scroll;
+    height: 85vh;
+}
+.selected{
+    overflow-y: scroll;
+    max-height: 90vh;
+}
+
+.series-rep{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.series-rep input {
+    width: 50px;
+    border: none;
+    background-color: #ffffffe0;
+    border-radius: 9px;
+    color: black;
+    padding: 3px 10px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    -ms-border-radius: 9px;
+    -o-border-radius: 9px;
+}
+
+.series-rep-text{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    color: var(--blanco);
+}
+
+
+
+
+
+
+
+
+
+.selected::-webkit-scrollbar{
+    width: 7px!important;
+    height: 7px!important;
+    cursor: pointer!important;
+      background-color: var(--rojo)!important;
+  }
+  
+.selected::-webkit-scrollbar-thumb{
+    background: linear-gradient(0deg,var( --rojo) 0%, var( --rojo) 50%)!important;
+     width: 10px!important;
+     border-radius:20px !important;
+     cursor: pointer!important;
+  }
+  .ejercicios-lista::-webkit-scrollbar{
+    width: 7px!important;
+    height: 7px!important;
+    cursor: pointer!important;
+      background-color: var(--rojo)!important;
+  }
+  
+.ejercicios-lista::-webkit-scrollbar-thumb{
+    background: linear-gradient(0deg,var( --rojo) 0%, var( --rojo) 50%)!important;
+     width: 10px!important;
+     border-radius:20px !important;
+     cursor: pointer!important;
+  }

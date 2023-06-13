@@ -5,11 +5,11 @@
    background-color: aqua;
    justify-content: center;
    align-items: center;
-   background-image: url(../../../public/img/1.jpg);
+   background-image: url(../../../public/img/fitness\ cloud\ fondo.jpg);
    height: 70vh;
    background-repeat: no-repeat;
    background-size: cover;
-   
+   background-attachment: fixed;
 }
 
 .inputEjercicios{
@@ -24,19 +24,25 @@
 .categoria-filtro label{
     background-color: var(--blanco);
     border-radius: 9px;
-    padding: 4px ;
+    padding: 6px ;
    width: 120px;
     font-size: 13px;
     cursor: pointer;
     gap: 10px;
+    display: flex;
+    align-items: center;
+    
 }
 .categoria-filtro input{
  width: 10px;
+
  background-color: transparent;
- 
+
 
 }
-
+.no-result{
+  color: var(--blanco);
+}
 .categoria-filtro {
     padding-top: 50px;
     display: flex;
@@ -73,6 +79,10 @@
   
   @media (max-width: 568px) {
 
+
+    .filtros{
+     height: 50vh;
+  }
     .categoria-filtro {
       
         display: flex;
@@ -80,7 +90,7 @@
         justify-content: center;
         text-align: center;
         overflow-x: scroll;
-        max-width: 100%;
+        width: 90%;
         padding-left: 20rem;
 
     }
@@ -123,7 +133,7 @@
   }
   
   .favorito-button .fa-heart {
-    color: rgba(0, 0, 0, 0.788);
+    color: rgba(0, 0, 0, 0.926);
   }
   
   .favorito-button.favorito-active .fa-heart {

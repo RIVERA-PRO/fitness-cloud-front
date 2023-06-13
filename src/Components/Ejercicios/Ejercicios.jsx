@@ -17,15 +17,17 @@ export default function Ejercicios() {
     const [coloresFavoritos, setColoresFavoritos] = useState({});
     const [favoritos, setFavoritos] = useState([]);
 
+
     useEffect(() => {
         axios
             .get('https://fitness-ue8o.onrender.com/ejercicios')
             .then((response) => {
                 setTimeout(() => {
-                    setEjercicios(response.data.ejercicios);
+                    const ejercicios = response.data.ejercicios;
+                    const sortedEjercicios = sortDescending(ejercicios, 'title'); // Ordenar los ejercicios de forma descendente
+                    setEjercicios(sortedEjercicios);
                     setShowSpiral(false);
-                    // Obtener todas las categorías sin repetirse
-                    const allCategories = response.data.ejercicios.map((ejercicio) => ejercicio.categoria);
+                    const allCategories = sortedEjercicios.map((ejercicio) => ejercicio?.categoria);
                     const uniqueCategories = [...new Set(allCategories)];
                     setCategories(uniqueCategories);
                 }, 2000);
@@ -35,6 +37,20 @@ export default function Ejercicios() {
             });
     }, []);
 
+    // Función para ordenar el array de ejercicios de forma descendente
+    const sortDescending = (array, key) => {
+        return array.sort((a, b) => {
+            const itemA = a[key].toUpperCase();
+            const itemB = b[key].toUpperCase();
+            if (itemA < itemB) {
+                return 1;
+            }
+            if (itemA > itemB) {
+                return -1;
+            }
+            return 0;
+        });
+    };
 
     const filteredEjercicios = ejercicios.filter((ejercicio) => {
         const ejercicioTitle = ejercicio.title.toLowerCase();
@@ -97,32 +113,32 @@ export default function Ejercicios() {
                                 type="text"
                                 value={searchTitle}
                                 onChange={(e) => setSearchTitle(e.target.value)}
-                                placeholder="Buscar por título"
+                                placeholder="Buscar Ejercicio"
                                 className="inputEjercicios"
                             />
                         </div>
                         <div className="categoria-filtro">
                             <label>
                                 <input
-                                    type="checkbox"
+                                    type="radio"
                                     name="category"
                                     value=""
                                     checked={selectedCategory === ""}
                                     onChange={() => setSelectedCategory("")}
                                 />
-                                Todas
+                                <span>Todas</span>
                             </label>
 
                             {categories.map((category) => (
                                 <label key={category}>
                                     <input
-                                        type="checkbox"
+                                        type="radio"
                                         name="category"
                                         value={category}
                                         checked={selectedCategory === category}
                                         onChange={() => setSelectedCategory(category)}
                                     />
-                                    {category}
+                                    <span> {category}</span>
                                 </label>
                             ))}
                         </div>
@@ -146,7 +162,7 @@ export default function Ejercicios() {
                                         <img src={ejercicio.img} alt={ejercicio.ejercicio} />
                                         <div className="card-text">
                                             <h4>{ejercicio.title.slice(0, 20)}...</h4>
-                                            <p>{ejercicio.description.slice(0, 55)}..</p>
+                                            <p>{ejercicio.description.slice(0, 50)}..</p>
                                             <Link to={`/ejercicios/${ejercicio._id}`}>
                                                 Ver más <FontAwesomeIcon icon={faSignOutAlt} />
                                             </Link>
@@ -155,7 +171,7 @@ export default function Ejercicios() {
                                 );
                             })
                         ) : (
-                            <p>No hay resultados.</p>
+                            <p className='no-result'>No hay resultados.</p>
                         )}
                     </div>
                 </div>

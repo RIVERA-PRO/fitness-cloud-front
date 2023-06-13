@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './Favoritos.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignOutAlt, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faSignOutAlt, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
+import img from '../../images/tlde.png';
 export default function Favoritos() {
 
     const [favoritos, setFavoritos] = useState([]);
@@ -25,10 +26,22 @@ export default function Favoritos() {
 
     return (
         <div className='favorito-component'>
-            <h1>Favoritos</h1>
+            <div className='fondo'>
+                <h1 className='titulo'> Tus ejercicios Favoritos</h1>
+            </div>
             {favoritos.length > 0 ? (
-                <div>
-                    <button onClick={removeAllFavoritos}>Remover Todos los Favoritos</button>
+                <div className='contain-favoritos'>
+                    <div className='title-img'>
+                        <div className='img-title'>
+                            <img src={img} alt="" />
+                            <h2>Favoritos</h2>
+                        </div>
+
+
+                        <Link onClick={removeAllFavoritos} className='remover-btn'>
+                            Vaciar <FontAwesomeIcon icon={faTrash} />
+                        </Link>
+                    </div>
                     <div className='favoritos-contain'>
                         {favoritos.map((ejercicio) => (
 

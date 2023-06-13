@@ -33,7 +33,7 @@ export default function PageRutinas() {
 
     return (
         <div className='RutinasContain'>
-            <div>
+            <div className='rutinas-btns'>
                 <button onClick={() => setActiveDia(1)}>Día 1</button>
                 <button onClick={() => setActiveDia(2)}>Día 2</button>
                 <button onClick={() => setActiveDia(3)}>Día 3</button>

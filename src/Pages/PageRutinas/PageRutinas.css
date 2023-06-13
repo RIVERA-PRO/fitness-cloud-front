@@ -1,8 +1,50 @@
 .RutinasContain{
     width: 100%;
-    padding: 10px 10%;
+    padding: 30px 10%;
     justify-content: center;
     align-items: center;
     place-content: center;
     align-content: center;
+    height: 100vh;
+}
+
+.rutinas-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+
+}
+
+.rutinas-btns button{
+    background-image: linear-gradient(to right,  var(--rojo2) 0%,  var(--rojo) 100%), linear-gradient(to right,  var(--rojo2) 0%,  var(--rojo) 100%);
+    color: var(--blanco);
+    border-radius: 7px;
+    border: none;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 10px;
+}
+
+@media (max-width: 700px){
+    .rutinas-btns {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        overflow-x: scroll;
+    
+    }
+    .RutinasContain{
+        width: 100%;
+        padding: 10px 2%;
+        justify-content: center;
+        align-items: center;
+        place-content: center;
+        align-content: center;
+    }
+    
 }

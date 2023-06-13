@@ -3,11 +3,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-   
+  
 }
 
 #img-fondo img{
-    height: 80vh;
+    height: 60vh;
     width: 100%!important;
     object-fit:cover;
     background-size: cover;
@@ -16,23 +16,35 @@
 
 .ejercicio-img{
     width: 100%;
-    
+    object-fit: cover;
+    height: 100%;
+   
 }
 
 .img-descripcion{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
-    place-content: center;
+    margin: auto;
     width: 100%;
-    gap: 3rem;
-    align-items: center;
-   padding: 50px 0px;
+    background:linear-gradient(30deg, var(--rojo), var(--rojo2));
+    overflow: hidden;
+    border-radius: 1em;
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: .6em;
+    margin-top: 30px;
+}
+
+.img-descripcion p{
+    color: var(--blanco);
+    font-size: 14px;
+    padding: .7em;
 }
 .titulo-detail{
     font-size: 30px;
     padding: 30px 0px ;
     text-align: center;
     align-items: center;
+    color: var(--blanco);
 }
 .mancuerna{
     display: flex;
@@ -55,7 +67,7 @@
 .detail-bg{
     width: 100%;
     border-radius: 5rem 5rem 0px 0px;
-    background-color: var(--blanco);
+    background-color: var(--bg-color);
     padding: 20px 13%;
     margin-top: -5%;
     -webkit-border-radius: 5rem 5rem 0px 0px;
@@ -66,6 +78,120 @@
 .detail-bg h4{
     font-size: 20px;
     margin-top: 2rem;
+    color: var(--blanco);
+}
+
+.tilde{
+    width: 20px;
+}
+li {
+     display: flex;
+     gap: 10px;
+     margin-top: 10px;
+     color: var(--blanco);
+     background-color: var(--bgv-color);
+     padding: 10px 8px ;
+     border-radius:7px ;
+    font-size: 14px;
+}
+  
+.pasos img{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+.consejos img{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+.modalCont{
+    background: rgba(0, 0, 0, 0.916);
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2000000;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+}
+.cerrar-modal-Cont{
+    margin-left: 90%;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--blanco);
+}
+.submodalCont{
+    width: 100%;
+    height: 10vh;
+    z-index: 20000000;
+    position: fixed;
+    background-image: linear-gradient(to right,  var(--rojo2) 0%,  var(--rojo) 100%), linear-gradient(to right,  var(--rojo2) 0%,  var(--rojo) 100%);
+    width: 500px;
+    height: 25rem;
+    border: 1px solid #00000077;
+    border-radius: 5px;
+    transform: translateX(0%);
+    transition: 0.3s ease all;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    gap: 1rem;
+    margin-top: 200px;
+}
+.btns-rutinas{
+    display: flex;
+    flex-direction: column;
+   
+    gap: 14px;
+}
+.btns-rutinas button{
+    background-color: var(--blanco);
+    border: none;
+    width: 200px;
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+.añadir {
+    background-image: linear-gradient(to right,  var(--rojo2) 0%,  var(--rojo) 100%), linear-gradient(to right,  var(--rojo2) 0%,  var(--rojo) 100%);
+    color: var(--blanco);
+    border-radius: 7px;
+    border: none;
+    width: 120px;
+    margin: 9px;
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 10px;
+    
+}
+.detail-contain a{
+    text-decoration: none!important;
+    font-size: 14px;
+}
+.añadir button{
+    background-color: transparent;
+}
+.favorito-button2 {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--blanco);
+}
+.btns-añadir{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 @media (max-width: 1024px) {
     #img-fondo img{
@@ -74,31 +200,29 @@
     .detail-bg{
         width: 100%;
         border-radius: 3rem 3rem 0px 0px;
-        background-color: var(--blanco);
+    
         padding: 20px 7%;
         margin-top: -30%;
         -webkit-border-radius: 3rem 3rem 0px 0px;
         -moz-border-radius: 3rem 3rem 0px 0px;
         -ms-border-radius: 3rem 3rem 0px 0px;
         -o-border-radius: 3rem 3rem 0px 0px;
-}
+  } 
+
+  .submodalCont{
+    width: 100%;
+  }
 }
 
-.tilde{
-    width: 20px;
+
+@media (max-width: 600px) {
+    .detail-bg{
+        padding: 10px 2%;
+    }
+    li{
+        font-size: 13px;
+    }
+    .detail-bg h4{
+        font-size: 18px;
+    }
 }
-li {
-     display: flex;
-     align-items: center;
-     gap: 10px;
-     margin-top: 10px;
-     background-color: var(--bgv-color);
-     padding: 10px 8px ;
-     border-radius:7px ;
-     -webkit-border-radius:7px ;
-     -moz-border-radius:7px ;
-     -ms-border-radius:7px ;
-     -o-border-radius:7px ;
-}
-  
-  

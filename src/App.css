@@ -3,11 +3,12 @@
   margin: 0;
   box-sizing: border-box;
    transition: all .40s ease!important;
+   
 }
 :root{
   --text-color: #000;
   --bg-color: #111111;
-  --bgv-color: #808a9434;
+  --bgv-color: #ffffff0d;
   --darkIcon-color: #000;
   --transparent:#0000000e;
   --gris:#ffffff25;
@@ -19,6 +20,7 @@
   --bg-li:  aliceblue;
 }
 
+body{    background-color: var(--bg-color);}
 
 .main-content {
   width: 100%;
@@ -34,7 +36,7 @@ h2,h3,h4,h5{
 
 
  
-.mancuerna, .titulo-detail, .img-descripcion, .pasos, .consejos,.categoria-filtro,.inputEjercicios , .modal_content, .comentario{
+.mancuerna, .titulo-detail, .img-descripcion, .pasos, .consejos,.categoria-filtro,.inputEjercicios , .modal_content, .comentario, .favoritos-contain , .añadir, .img-form , .rutinas-btns, .ejercicio-seleccionado , .selected{
   opacity: 0;
   animation: slideFromLeft 1s ease-in-out forwards;
   -webkit-animation: slideFromLeft 1s ease-in-out forwards;
@@ -50,10 +52,7 @@ h2,h3,h4,h5{
   animation: slideFromLeft 1s ease-in-out forwards;
   -webkit-animation: slideFromLeft 1s ease-in-out forwards;
 }
-.titulo{
-opacity: 0;
-animation: slideFromCenter 1s ease-in-out forwards;
--webkit-animation: slideFromCenter 1s ease-in-out forwards;
+.titulo,  .submodalCont{ opacity: 0; animation: slideFromCenter 0.55s ease-in-out forwards; -webkit-animation: slideFromCenter 0.55s ease-in-out forwards;
 }
 
 
@@ -97,3 +96,6 @@ to {
     -o-transform: translateY(-20%);
 }
 }
+
+
+

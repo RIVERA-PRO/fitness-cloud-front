@@ -181,6 +181,17 @@
         justify-content: space-between;
         gap: 10px;
         padding: 10px;
-        flex-direction: column;
+     
+    }
+    .form-edit-comment{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 0%;
+        background-color: var(--bg-color);
+        height: 20vh;
+        width: 100%;
+        margin-top: -2.1rem;
     }
 }

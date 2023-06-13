@@ -1,22 +1,43 @@
 .favorito-component{
     background-color: var(--bg-color);
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.fondo{
+    background-image: url(../../images/fitness\ cloud\ fondo.jpg);
+    height: 40vh;
+    background-repeat: no-repeat;
+    background-size:cover ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.remover-btn{
+    cursor: pointer;
+    border: none;
+    color: var(--blanco);
+    padding: 7px 20px;
+    background-color: transparent;
+    border-radius: 7px;
+    text-align: center;
+  
+}
+.contain-favoritos{
+    padding-top: 50px;
 }
 .favoritos-contain{
+    margin: auto;
     width: 100%;
     padding: 10px 13%;
     overflow: hidden;
+    border-radius: 1em;
     display: grid;
     grid-auto-rows: max-content;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    transition: all 0.25s;
-    height: 100%;
-    place-content: center;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    
+    gap: 1rem;
 }
 
 .card-lateral{
@@ -83,4 +104,26 @@
     padding: 5px;
     border-radius: 7px;
     margin-top: 6px;
+}
+@media (max-width: 900px){
+    .favorito-component{
+     
+        height: 100%;
+    
+    }
+
+    .card-lateral{
+        width: 100%;
+      
+    }
+
+    .delete-button{
+     margin-left: 52%;
+   
+    }
+    .favoritos-contain{
+        padding: 10px 5%;
+      
+    }
+    
 }

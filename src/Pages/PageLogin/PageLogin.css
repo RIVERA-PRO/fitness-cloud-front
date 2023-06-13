@@ -11,7 +11,7 @@
     margin: auto;
     width: 100%;
     max-width: 1000px;
-    background:linear-gradient(30deg, var(--rojo), var(--rojo3));
+    background:linear-gradient(30deg, var(--rojo), var(--rojo4));
     overflow: hidden;
     padding: .7em;
     border-radius: 1em;

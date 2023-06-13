@@ -15,7 +15,7 @@
     border-radius: 10px;
 }
 .card-scroll a{
-    background-color: var(--rojo2);
+    background-image: linear-gradient(to right,  var(--rojo2) 0%,  var(--rojo) 100%), linear-gradient(to right,  var(--rojo2) 0%,  var(--rojo) 100%);
     font-size: 13px;
     padding: 4px;
     border-radius: 7px;

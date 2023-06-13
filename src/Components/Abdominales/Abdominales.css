@@ -1,6 +1,6 @@
 .HeroAbdominales{
     background-image: url(../../../public/img/abdominales.jpg);
-    height: 80vh;
+    height: 60vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -17,8 +17,8 @@
 }
 .card{
     overflow: hidden;
-    height: 22rem;
-    width: 16rem;
+    height: 20rem;
+    width: 14rem;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -37,25 +37,22 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 10px;
+    gap: 4px;
     text-align: left;
 }
 .card p{
-    font-size: 14px;
+    font-size: 13px;
 }
 .card a{
     font-size: 14px;
     text-decoration: none;
     background-image: linear-gradient(to right,  var(--rojo2) 0%,  var(--rojo) 100%), linear-gradient(to right,  var(--rojo2) 0%,  var(--rojo) 100%);
-    color: var(
-        --blanco
-    );
-    padding: 7px 7px;
-    border-radius: 30px;
-  text-align: center;
-  width: 9rem;
-  
+    color: var(        --blanco    );
+    padding: 5px 7px;
+    border-radius: 8px;
+    text-align: center;
     
+   
 }
 .card img{
     width: 100%;
@@ -65,7 +62,7 @@
 
 .cards-contain{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     place-content: center;
     height: 100%;
     width: 100%;
@@ -79,4 +76,84 @@
     -moz-border-radius:3rem 3rem 0px 0px;
     -ms-border-radius:3rem 3rem 0px 0px;
     -o-border-radius:3rem 3rem 0px 0px;
+}
+
+@media (max-width: 500px) {
+    .card{
+        overflow: hidden;
+        height: 15rem;
+        width: 10rem;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: 0px 4px 15px rgb(0 0 0 / 8%);
+        padding: 4px;
+        border-radius: 7px;
+        background-color: var(--blanco);
+        transition: all .40s ease!important;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -o-border-radius: 7px;
+    }
+    .card p{
+        font-size: 11.3px;
+    }
+    .card a{
+        font-size: 12px;
+    }
+    .card img{
+        height: 130px;
+    }
+    .card h4{
+        font-size: 13px;
+    }
+
+    .cards-contain{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+        place-content: center;
+        height: 100%;
+        width: 100%;
+        padding: 100px 5%;
+        gap: 1rem;
+        background-color: var(--bg-color);
+        transition: all .40s ease!important;;
+        margin-top: -5rem;
+        border-radius:3rem 3rem 0px 0px;
+        -webkit-border-radius:3rem 3rem 0px 0px;
+        -moz-border-radius:3rem 3rem 0px 0px;
+        -ms-border-radius:3rem 3rem 0px 0px;
+        -o-border-radius:3rem 3rem 0px 0px;
+    }
+}
+
+@media (max-width: 340px) {
+    .card{
+      
+        height: 15rem;
+        width: 9rem;
+        display: flex;
+       
+    }
+    .card img{
+        height: 120px;
+    }
+    .cards-contain{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, auto));
+        place-content: center;
+        height: 100%;
+        width: 100%;
+        padding: 100px 2%;
+        gap: 1rem;
+        background-color: var(--bg-color);
+        transition: all .40s ease!important;;
+        margin-top: -5rem;
+        border-radius:3rem 3rem 0px 0px;
+        -webkit-border-radius:3rem 3rem 0px 0px;
+        -moz-border-radius:3rem 3rem 0px 0px;
+        -ms-border-radius:3rem 3rem 0px 0px;
+        -o-border-radius:3rem 3rem 0px 0px;
+    }
 }

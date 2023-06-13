@@ -82,7 +82,7 @@ export default function Cardio() {
                             <img src={ejercicio.img} alt={ejercicio.ejercicio} />
                             <div className="card-text">
                                 <h4>{ejercicio.title.slice(0, 20)}...</h4>
-                                <p>{ejercicio.description.slice(0, 55)}..</p>
+                                <p>{ejercicio.description.slice(0, 50)}..</p>
                                 <Link to={`/ejercicios/${ejercicio._id}`}>
                                     Ver más <FontAwesomeIcon icon={faSignOutAlt} />
                                 </Link>
