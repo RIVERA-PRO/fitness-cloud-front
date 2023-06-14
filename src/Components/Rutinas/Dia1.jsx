@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt, faTrash } from '@fortawesome/free-solid-svg-icons'
 import './Rutinas.css'
 import tilde from '../../../src/images/tlde.png';
+import imagen from '../../images/1.jpg'
 export default function Dia1() {
     const [listaEjercicios, setListaEjercicios] = useState([]);
     const [ejercicioSeleccionado, setEjercicioSeleccionado] = useState(null);
@@ -35,20 +36,22 @@ export default function Dia1() {
             <div className="ejercicios-lista">
                 {listaEjercicios.length > 0 ? (
                     <div>
+                        <button className='remover' onClick={eliminarTodosLosEjercicios}>Eliminar todos</button>
                         {listaEjercicios.map(ejercicio => (
                             <div key={ejercicio._id} className='card-lateral'>
-                                <img src={ejercicio.img} alt="" />
+
+                                <Link className='img' to={`/ejercicios/${ejercicio._id}`}><img src={ejercicio.img} alt="" /></Link>
                                 <div className='card-lateral-text'>
-                                    <button onClick={() => eliminarEjercicio(ejercicio._id)}>X</button>
-                                    <h4>{ejercicio.title.slice(0, 20)}..</h4>
-                                    <p>{ejercicio.description.slice(0, 40)}...</p>
-                                    <button onClick={() => mostrarEjercicio(ejercicio)}>
+                                    <button className='delete' onClick={() => eliminarEjercicio(ejercicio._id)}>X</button>
+                                    <h4>{ejercicio.title.slice(0, 50)}..</h4>
+
+                                    <button className='empezar' onClick={() => mostrarEjercicio(ejercicio)}>
                                         <FontAwesomeIcon icon={faSignOutAlt} /> Empezar
                                     </button>
                                 </div>
                             </div>
                         ))}
-                        <button onClick={eliminarTodosLosEjercicios}>Eliminar todos</button>
+
                     </div>
                 ) : (
                     <div>
@@ -60,6 +63,7 @@ export default function Dia1() {
             <div className="ejercicio-seleccionado">
                 {ejercicioSeleccionado ? (
                     <div className='selected'>
+                        <button className='cerrar-ej' onClick={() => setEjercicioSeleccionado(null)}>X</button>
                         <img src={ejercicioSeleccionado.img} alt="" />
 
 
@@ -93,11 +97,11 @@ export default function Dia1() {
 
 
 
-                        <button onClick={() => setEjercicioSeleccionado(null)}>Cerrar</button>
+
                     </div>
                 ) : (
-                    <div className='selected'>
-                        <p>dasdasdasd</p>
+                    <div className='sinselected'>
+                        <img className='img-fondos' src={imagen} alt="" />
                     </div>
                 )}
             </div>

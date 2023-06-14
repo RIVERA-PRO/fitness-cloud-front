@@ -36,11 +36,12 @@
 
 .ejercicios-lista{
     overflow-y: scroll;
-    height: 85vh;
+    height: 86vh;
+    padding: 10px;
 }
-.selected{
+.ejercicio-seleccionado{
     overflow-y: scroll;
-    max-height: 90vh;
+    padding: 10px;
 }
 
 .series-rep{
@@ -69,6 +70,65 @@
     color: var(--blanco);
 }
 
+.remover {
+    width: 100%;
+    background-color: var(--rojo2);
+    border: none;
+    color: var(--blanco);
+    padding: 7px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.delete{
+    background-color: transparent;
+    border: none;
+    color: var(--blanco);
+  
+    margin-left: 11rem;
+    cursor: pointer;
+}
+.cerrar-ej{
+    background-color: transparent;
+    border: none;
+    color: var(--blanco);
+    margin-left: 98%;
+    cursor: pointer;
+}
+.empezar{
+    border: none;
+    color: var(--blanco);
+    cursor: pointer;
+    background-color: var(--rojo);
+    padding: 7px;
+    width: 100px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+.img img{
+    height: 100%;
+}
+.img-fondos{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sinselected{
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 1024px) {
+    .container{
+        flex-direction: column;
+        flex-direction: column-reverse;
+        padding: 20px 1%;
+    }
+    .ejercicio-seleccionado{
+        width: 100%;
+    }
+}
 
 
 
@@ -76,25 +136,25 @@
 
 
 
-
-.selected::-webkit-scrollbar{
-    width: 7px!important;
+.ejercicio-seleccionado::-webkit-scrollbar{
+    width: 4px!important;
     height: 7px!important;
     cursor: pointer!important;
-      background-color: var(--rojo)!important;
+
   }
   
-.selected::-webkit-scrollbar-thumb{
-    background: linear-gradient(0deg,var( --rojo) 0%, var( --rojo) 50%)!important;
+.ejercicio-seleccionado::-webkit-scrollbar-thumb{
      width: 10px!important;
      border-radius:20px !important;
      cursor: pointer!important;
+     background: linear-gradient(0deg,var( --rojo) 0%, var( --rojo) 50%)!important;
+    
   }
   .ejercicios-lista::-webkit-scrollbar{
-    width: 7px!important;
+    width: 4px!important;
     height: 7px!important;
     cursor: pointer!important;
-      background-color: var(--rojo)!important;
+    
   }
   
 .ejercicios-lista::-webkit-scrollbar-thumb{
@@ -103,3 +163,5 @@
      border-radius:20px !important;
      cursor: pointer!important;
   }
+
+  

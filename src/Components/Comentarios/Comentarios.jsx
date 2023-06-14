@@ -274,7 +274,7 @@ export default function Comentarios() {
                 </div>
             ) : (
                 <div className='crear-comentario-form'>
-                    <Anchor to={`/register`} >  <span className='a'> Inicia sesion comentar</span></Anchor>
+                    <Anchor to={`/register`} >   Inicia sesion comentar</Anchor>
                 </div>
             )}
 
